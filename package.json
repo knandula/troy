@@ -1,0 +1,23 @@
+{
+  "name": "troy",
+  "version": "1.0.0",
+  "description": "troy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "bower": "^1.4.1",
+    "gulp": "^3.8.11",
+    "gulp-if": "^1.2.5",
+    "gulp-jscs": "^1.6.0",
+    "gulp-jshint": "^1.11.0",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-print": "^1.1.0",
+    "jshint-stylish": "^2.0.0",
+    "yargs": "^3.10.0"
+  }
+}
