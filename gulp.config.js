@@ -10,6 +10,9 @@ module.exports=function(){
             'src/*.js'
         ],
         client : client,
+        nodeServer : "./src/server/app.js",
+        server : "./src/server",
+        defaultPort:7203,
         index :  client +'index.html',
         js:[
             clientApp +'**/*.modules.js',
