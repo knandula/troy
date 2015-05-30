@@ -15,5 +15,20 @@ gulp.task('check',function() {
 });
 
 
+gulp.task('wiredep',function(){
+
+    var options = config.getWireDepDefaultOptions();
+    var wiredep = require('wiredep').stream;
+
+    return gulp
+        .src(config.index)
+        .pipe(wiredep(options))
+        .pipe($.inject(gulp.src(config.js)))
+        .pipe(gulp.dest(config.client));
+
+
+});
+
+
 
 
