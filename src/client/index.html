@@ -9,8 +9,29 @@
     <!--inject:css-->
     <!--endinject-->
 <style type = "text/css">
-    body {margin:0 ; padding :0}
+    body {margin:10 ; padding :0}
     #map {position:absolute; top:0;bottom:0;width: 100%;}
+    h1 {
+        font-size: 40px;
+        font-family: sans-serif;
+    }
+    .overlay{
+        /* some styles to position the modal at the center of the page */
+        position: fixed;
+        top: 25%;
+        left: 35%;
+        width: 50%;
+        line-height: 200px;
+        height: 50%;
+        margin-left: -150px;
+        margin-top: -290px;
+        background-color: transparent;
+        text-align: center;
+
+        /* needed styles for the overlay */
+        z-index: 10; /* keep on top of other elements on the page */
+        outline: 9999px solid rgba(0,0,0,0.2);
+    }
 </style>
 <script type="text/javascript">
     window.onload = function() {
@@ -32,9 +53,15 @@
 </script>
 </head>
 <body>
-<div id="map"></div>
+<div class="overlay">
+    <h1>StreatBeat</h1>
+    <h1>Coming Soon</h1>
+</div>
+<div id="map">
+</div>
 
 <!--bower:js-->
+<script src="/bower_components/jquery/dist/jquery.js"></script>
 <script src="/bower_components/angular/angular.js"></script>
 <script src="/bower_components/mapbox.js/mapbox.js"></script>
 <!--endbower-->
