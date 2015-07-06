@@ -4,6 +4,7 @@ var express = require('express');
 var app = express();
 var port = process.env.PORT || 7203;
 var environment = process.env.NODE_ENV;
+var GeoJson = require('geojson');
 
 console.log('About to crank up node');
 console.log('PORT=' + port);

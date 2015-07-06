@@ -14,7 +14,8 @@
   ],
   "dependencies": {
     "angular": "~1.4.0",
-    "mapbox.js": "~2.2.0"
+    "mapbox.js": "~2.2.0",
+    "angular-route": "~1.4.1"
   },
   "devDependencies": {
     "mapbox.js": "~2.2.0"

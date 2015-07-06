@@ -15,6 +15,7 @@ module.exports=function(){
         defaultPort:7203,
         index :  client +'index.html',
         js:[
+            client +'**.js',
             clientApp +'**/*.modules.js',
             clientApp + '**/*.js',
             '!'+clientApp + '**/*.spec.js'
