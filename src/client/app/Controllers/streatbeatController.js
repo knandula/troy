@@ -15,33 +15,33 @@ app.controller("streatbeatcntrl",['$scope','$http',function($scope,$http){
     //    }
     //};
     //
-    var states = [{
-        "type": "Feature",
-        "properties": {"party": "Republican"},
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[
-                [-104.05, 48.99],
-                [-97.22,  48.98],
-                [-96.58,  45.94],
-                [-104.03, 45.94],
-                [-104.05, 48.99]
-            ]]
-        }
-    }, {
-        "type": "Feature",
-        "properties": {"party": "Democrat"},
-        "geometry": {
-            "type": "Polygon",
-            "coordinates": [[
-                [-109.05, 41.00],
-                [-102.06, 40.99],
-                [-102.03, 36.99],
-                [-109.04, 36.99],
-                [-109.05, 41.00]
-            ]]
-        }
-    }];
+    //var states = [{
+    //    "type": "Feature",
+    //    "properties": {"party": "Republican"},
+    //    "geometry": {
+    //        "type": "Polygon",
+    //        "coordinates": [[
+    //            [-104.05, 48.99],
+    //            [-97.22,  48.98],
+    //            [-96.58,  45.94],
+    //            [-104.03, 45.94],
+    //            [-104.05, 48.99]
+    //        ]]
+    //    }
+    //}, {
+    //    "type": "Feature",
+    //    "properties": {"party": "Democrat"},
+    //    "geometry": {
+    //        "type": "Polygon",
+    //        "coordinates": [[
+    //            [-109.05, 41.00],
+    //            [-102.06, 40.99],
+    //            [-102.03, 36.99],
+    //            [-109.04, 36.99],
+    //            [-109.05, 41.00]
+    //        ]]
+    //    }
+    //}];
     //
     //var myLines = [{
     //    "type": "LineString",
@@ -57,15 +57,18 @@ app.controller("streatbeatcntrl",['$scope','$http',function($scope,$http){
         "opacity": 0.65
     };
 
-    //var GeoJson = require('geojson');
+
+    $scope.postLayer= function() {
+        var good_geojson = '{"type": "Feature", "properties": {"name": "Diamond park", "amenity": "Floating Stadium", "popupContent": "Fantastic!"}, "geometry": {"type": "Point","coordinates": [100, 80]}}';
+        $http.post('http://localhost:3000/api/maplayers',good_geojson).success(function(response){
+            console.log("Successfully inserted");
+        }).error(function()
+        {
+            console.log("Failed to insert");
+        });
+    }
     $scope.callback = function (map) {
-        //var good_geojson = '{"type": "Feature", "properties": {"name": "Diamond park", "amenity": "Floating Stadium", "popupContent": "Fantastic!"}, "geometry": {"type": "Point","coordinates": [100, 80]}}';
-        //$http.post('http://localhost:3000/api/maplayers',good_geojson).success(function(response){
-        //    console.log("Successfully inserted");
-        //}).error(function()
-        //{
-        //    console.log("Failed to insert");
-        //});
+
         $http.get('http://localhost:3000/api/maplayers').success(function(response){
              $scope.lays= response;
 
@@ -90,35 +93,35 @@ app.controller("streatbeatcntrl",['$scope','$http',function($scope,$http){
             }
         }
 
-        var geojsonFeature = {
-            "type": "Feature",
-            "properties": {
-                "name": "Mooo Field",
-                "amenity": "Floating Stadium",
-                "popupContent": "This is where we ski!"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [-125.99404, 39.75621]
-            }
-        };
+        //var geojsonFeature = {
+        //    "type": "Feature",
+        //    "properties": {
+        //        "name": "Mooo Field",
+        //        "amenity": "Floating Stadium",
+        //        "popupContent": "This is where we ski!"
+        //    },
+        //    "geometry": {
+        //        "type": "Point",
+        //        "coordinates": [-125.99404, 39.75621]
+        //    }
+        //};
         //
         //console.log( geojsonFeature);
         //console.log( $scope.lays);  //undefined
 
-        L.geoJson(geojsonFeature).addTo(map);
+        //L.geoJson(geojsonFeature).addTo(map);
 
-        //map.setView([51.433333, 5.483333], 12);
+        //map.setView([51.433333, 5.483333], 5);
         //L.geoJson(geojsonFeature).addTo(map);
         //L.geoJson(myLines, {style: myStyle}).addTo(map);
-        L.geoJson(states, {
-            style: function(feature) {
-                switch (feature.properties.party) {
-                    case 'Republican': return {color: "#ff0000"};
-                    case 'Democrat':   return {color: "#0000ff"};
-                }
-            }
-        }).addTo(map);
+        //L.geoJson(states, {
+        //    style: function(feature) {
+        //        switch (feature.properties.party) {
+        //            case 'Republican': return {color: "#ff0000"};
+        //            case 'Democrat':   return {color: "#0000ff"};
+        //        }
+        //    }
+        //}).addTo(map);
         //L.marker([50.5, 30.5]).addTo(map);
 
     };
