@@ -68,7 +68,13 @@ app.controller("streatbeatcntrl",['$scope','$http',function($scope,$http){
         });
     }
     $scope.callback = function (map) {
-
+        //var good_geojson = '{"type": "Feature", "properties": {"name": "Diamond park", "amenity": "Floating Stadium", "popupContent": "Fantastic!"}, "geometry": {"type": "Point","coordinates": [100, 80]}}';
+        //$http.post('http://localhost:3000/api/maplayers',good_geojson).success(function(response){
+        //    console.log("Successfully inserted");
+        //}).error(function()
+        //{
+        //    console.log("Failed to insert");
+        //});
         $http.get('http://localhost:3000/api/maplayers').success(function(response){
              $scope.lays= response;
 
