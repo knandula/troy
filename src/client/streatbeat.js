@@ -36,15 +36,18 @@ app.directive('mapbox', [
                 var map = L.mapbox.map(element[0],null);
                 map.zoomControl = false;
                 var layers = {
-                    SatelliteView : L.mapbox.tileLayer('bluegene.mfl8kdhk'),
-                    StreetView : L.mapbox.tileLayer('bluegene.ffdb711a'),
-                    DarkView : L.mapbox.tileLayer('bluegene.mfl79iea')
+                    StreetView : L.mapbox.tileLayer('bluegene.ffdb711a')
                 };
 
                 layers.StreetView.addTo(map);
+
+
+
                 L.control.layers(layers).addTo(map);
                 map.locate();
                 var myLayer = L.mapbox.featureLayer().addTo(map);
+
+
 
                 map.on('locationfound', function(e) {
                     currentlats = e.latlng.lat;
