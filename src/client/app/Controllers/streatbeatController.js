@@ -8,15 +8,7 @@ app.controller("streatbeatcntrl",['$scope','$http',function($scope,$http){
         "opacity": 0.65
     };
 
-    //var GeoJson = require('geojson');
     $scope.callback = function (map) {
-        //var good_geojson = '{"type": "Feature", "properties": {"name": "Diamond park", "amenity": "Floating Stadium", "popupContent": "Fantastic!"}, "geometry": {"type": "Point","coordinates": [100, 80]}}';
-        //$http.post('http://localhost:3000/api/maplayers',good_geojson).success(function(response){
-        //    console.log("Successfully inserted");
-        //}).error(function()
-        //{
-        //    console.log("Failed to insert");
-        //});
         $http.get('http://localhost:3000/api/maplayers').success(function(response){
              $scope.lays= response;
 
@@ -47,13 +39,7 @@ app.controller("streatbeatcntrl",['$scope','$http',function($scope,$http){
                 "coordinates": [-125.99404, 39.75621]
             }
         };
-
-
-
-
-
-              L.geoJson(geojsonFeature).addTo(map);
-
+        L.geoJson(geojsonFeature).addTo(map);
         L.geoJson(states, {
             style: function(feature) {
                 switch (feature.properties.party) {
@@ -62,8 +48,6 @@ app.controller("streatbeatcntrl",['$scope','$http',function($scope,$http){
                 }
             }
         }).addTo(map);
-        //L.marker([50.5, 30.5]).addTo(map);
-
     };
 
 }])

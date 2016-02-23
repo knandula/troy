@@ -68,7 +68,7 @@ app.directive('mapbox', [
                             'marker-symbol': 'circle'
                         }
                     });
-                    map.setView([currentlats,currnetlong],5);
+                    map.setView([currentlats,currnetlong],50);
                 });
                 scope.callback(map);
             }
