@@ -29,16 +29,12 @@ app.directive('mapbox', [
             },
             template: '<div></div>',
             link: function (scope, element, attributes) {
-
                 var currentlats;
                 var currnetlong;
-
                 L.mapbox.accessToken = 'pk.eyJ1IjoiYmx1ZWdlbmUiLCJhIjoiZjMwNzU2ZmQyMzdlMGQ3YjlkYTRmYmY3ZGY5N2RhMDMifQ.gnt0BCmgUCChF56g7kEo7Q';
 
-
-
                 var map = L.mapbox.map(element[0],null);
-
+                map.zoomControl = false;
                 var layers = {
                     SatelliteView : L.mapbox.tileLayer('bluegene.mfl8kdhk'),
                     StreetView : L.mapbox.tileLayer('bluegene.ffdb711a'),
@@ -48,13 +44,12 @@ app.directive('mapbox', [
                 layers.StreetView.addTo(map);
                 L.control.layers(layers).addTo(map);
                 map.locate();
-
                 var myLayer = L.mapbox.featureLayer().addTo(map);
 
                 map.on('locationfound', function(e) {
                     currentlats = e.latlng.lat;
                     currnetlong = e.latlng.lng;
-                    map.fitBounds(e.bounds);
+
                     myLayer.setGeoJSON({
                         type: 'Feature',
                         geometry: {
