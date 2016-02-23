@@ -37,7 +37,7 @@ app.directive('mapbox', [
                 L.mapbox.accessToken = 'pk.eyJ1IjoiYmx1ZWdlbmUiLCJhIjoiZjMwNzU2ZmQyMzdlMGQ3YjlkYTRmYmY3ZGY5N2RhMDMifQ.gnt0BCmgUCChF56g7kEo7Q';
                 var map = L.mapbox.map(element[0], 'bluegene.ffdb711a');
 
-                var map = L.mapbox.map(element[0],null);
+                //var map = L.mapbox.map(element[0],null);
                 map.zoomControl = false;
                 var layers = {
                     SatelliteView : L.mapbox.tileLayer('bluegene.mfl8kdhk'),
@@ -105,7 +105,7 @@ app.directive('mapbox', [
 
                 //map.setView([21.2889,74.7772],5)
                 map.touchZoom.enable();
-                map.tap.enable();
+                //map.tap.enable();
                 scope.callback(map);
             }
         };
