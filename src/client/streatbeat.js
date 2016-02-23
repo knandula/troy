@@ -66,8 +66,10 @@ app.directive('mapbox', [
                             'marker-symbol': 'circle'
                         }
                     });
-                    map.setView([currentlats,currnetlong],50);
+                    map.setView([currentlats,currnetlong],16);
                 });
+                map.touchZoom.enable();
+                map.tap.enable();
                 scope.callback(map);
             }
         };
