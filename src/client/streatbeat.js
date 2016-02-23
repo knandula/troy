@@ -31,16 +31,27 @@ app.directive('mapbox', [
             template: '<div><pre id="info" style=" display: block;position: relative;margin: 0px auto;width: 50%;padding: 10px;border: none;border-radius: 3px;font-size: 12px;text-align: center;color: #222;background: #fff;"></pre></div>',
             link: function (scope, element, attributes) {
 
+                var currentlats;
+                var currnetlong;
+
                 L.mapbox.accessToken = 'pk.eyJ1IjoiYmx1ZWdlbmUiLCJhIjoiZjMwNzU2ZmQyMzdlMGQ3YjlkYTRmYmY3ZGY5N2RhMDMifQ.gnt0BCmgUCChF56g7kEo7Q';
                 var map = L.mapbox.map(element[0], 'bluegene.ffdb711a');
+
+                var map = L.mapbox.map(element[0],null);
+                map.zoomControl = false;
                 var layers = {
                     SatelliteView : L.mapbox.tileLayer('bluegene.mfl8kdhk'),
                     StreetView : L.mapbox.tileLayer('bluegene.ffdb711a'),
                     DarkView : L.mapbox.tileLayer('bluegene.mfl79iea')
                 };
+
                 layers.StreetView.addTo(map);
                 console.log("Inside directive");
                 var myLayer = L.mapbox.featureLayer().addTo(map);
+
+
+
+                L.control.layers(layers).addTo(map);
                 map.locate();
 
                 map.on('mousemove', function(e) {
@@ -57,10 +68,16 @@ app.directive('mapbox', [
                     //console.log(e);
                     console.log(scope.text );
                     //element.children()[0].html(html);
+                var myLayer = L.mapbox.featureLayer().addTo(map);
+
+
 
                 });
 
                 map.on('locationfound', function(e) {
+                    currentlats = e.latlng.lat;
+                    currnetlong = e.latlng.lng;
+
                     map.fitBounds(e.bounds);
                     //console.log(e.bounds);
                     myLayer.setGeoJSON({
@@ -75,6 +92,7 @@ app.directive('mapbox', [
                             'marker-symbol': 'star'
                         }
                     });
+                    map.setView([currentlats,currnetlong],16);
                 });
                 // Initialize the geocoder control and add it to the map.
                 var geocoderControl = L.mapbox.geocoderControl( 'mapbox.places',
@@ -86,6 +104,8 @@ app.directive('mapbox', [
 
 
                 //map.setView([21.2889,74.7772],5)
+                map.touchZoom.enable();
+                map.tap.enable();
                 scope.callback(map);
             }
         };
