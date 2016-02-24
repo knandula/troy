@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html>
 <style type="text/css">
-    #sidebar {
-       position: absolute;top:0;
-       right: 0;
-       width:30%;
-       height: 100%;
-       margin-left:0;
-       padding-left:5px;
-   }
     .leaflet-container
     {
         overflow: visible;
@@ -26,12 +18,11 @@
     </style>
 </head>
 <body>
-<mapbox callback="callback" id="map" ></mapbox>
-<div id="sidebar">
-<center><h3>StreatBeat.</h3></center>
-    <p></p>
+<div class="container">
+    <div class="row">
+        <mapbox callback="callback" id="map" ></mapbox>
+        <div ng-include="'app/views/sidebar.html'" />
+    </div>
 </div>
-</div>
-
 </body>
 </html>

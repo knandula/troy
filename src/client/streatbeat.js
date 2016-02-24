@@ -46,7 +46,6 @@ app.directive('mapbox', [
                 };
 
                 layers.StreetView.addTo(map);
-                console.log("Inside directive");
                 var myLayer = L.mapbox.featureLayer().addTo(map);
                 L.control.layers(layers).addTo(map);
                 map.locate();
