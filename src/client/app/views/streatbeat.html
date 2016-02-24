@@ -19,35 +19,10 @@
     <style type = "text/css">
         body {margin:0 ; padding :0}
         #map {position:absolute; top:0;bottom:0;width: 69%;}
-
-        /*body {margin:0 ; padding :0}*/
-        /*#map {position:absolute; top:0;bottom:0;width: 100%;}*/
-        body, html, .leaflet-container {
-            height: 1000px;
-        }
     </style>
-    <!--<script type="text/javascript">-->
-        <!--var init=function() {-->
-            <!--L.mapbox.accessToken = 'pk.eyJ1IjoiYmx1ZWdlbmUiLCJhIjoiZjMwNzU2ZmQyMzdlMGQ3YjlkYTRmYmY3ZGY5N2RhMDMifQ.gnt0BCmgUCChF56g7kEo7Q';-->
-            <!--window.map = L.mapbox.map('map',null);-->
-
-            <!--var layers = {-->
-                <!--SatelliteView : L.mapbox.tileLayer('bluegene.mfl8kdhk'),-->
-                <!--StreetView : L.mapbox.tileLayer('bluegene.ffdb711a'),-->
-                <!--DarkView : L.mapbox.tileLayer('bluegene.mfl79iea')-->
-            <!--};-->
-
-            <!--layers.StreetView.addTo(map);-->
-            <!--L.control.layers(layers).addTo(map);-->
-
-            <!--map.setView([21.2889,74.7772],3);-->
-
-        <!--};-->
-        <!--init();-->
-    <!--</script>-->
 </head>
 <body>
- <mapbox callback="callback" ></mapbox>
+<mapbox callback="callback" id="map" ></mapbox>
 <div id="sidebar">
 
 </div>

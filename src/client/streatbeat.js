@@ -48,29 +48,11 @@ app.directive('mapbox', [
                 layers.StreetView.addTo(map);
                 console.log("Inside directive");
                 var myLayer = L.mapbox.featureLayer().addTo(map);
-
-
-
                 L.control.layers(layers).addTo(map);
                 map.locate();
 
                 map.on('mousemove', function(e) {
-                    console.log(scope.text );
-                   // var html =  element.children()[0].html();
-                   // // e.point is the x, y coordinates of the mousemove event relative
-                   // // to the top-left corner of the map
-                   // element.children()[0].text(JSON.stringify(e.point) + '<br />' +
-                   //     // e.latLng is the latitude, longitude geographical position of the event
-                   //JSON.stringify(e.latLng));
-                    console.log("Inside mouse move");
-                    console.log(e.containerPoint);
-                    console.log(e.latlng);
-                    //console.log(e);
-                    console.log(scope.text );
-                    //element.children()[0].html(html);
                 var myLayer = L.mapbox.featureLayer().addTo(map);
-
-
 
                 });
 
@@ -79,7 +61,6 @@ app.directive('mapbox', [
                     currnetlong = e.latlng.lng;
 
                     map.fitBounds(e.bounds);
-                    //console.log(e.bounds);
                     myLayer.setGeoJSON({
                         type: 'Feature',
                         geometry: {
@@ -87,7 +68,7 @@ app.directive('mapbox', [
                             coordinates: [e.latlng.lng, e.latlng.lat]
                         },
                         properties: {
-                            'title': 'Here I am!',
+                            'title': 'StreatBeat',
                             'marker-color': '#ff8888',
                             'marker-symbol': 'star'
                         }
@@ -101,11 +82,7 @@ app.directive('mapbox', [
                      autocomplete: true
                     });
                 geocoderControl.addTo(map);
-
-
-                //map.setView([21.2889,74.7772],5)
                 map.touchZoom.enable();
-                //map.tap.enable();
                 scope.callback(map);
             }
         };
