@@ -1,0 +1,1 @@
+module.exports = require("bower:highcharts-ng@0.0.11/dist/highcharts-ng");

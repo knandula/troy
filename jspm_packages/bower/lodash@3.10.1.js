@@ -1,0 +1,1 @@
+module.exports = require("bower:lodash@3.10.1/lodash");

@@ -1,0 +1,5 @@
+/* */ 
+"format cjs";
+({
+  tag: "yo"
+})

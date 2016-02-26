@@ -1,0 +1,1 @@
+module.exports = require("npm:angular-uuid@0.0.2/angular-uuid.js");

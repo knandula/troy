@@ -1,0 +1,1 @@
+module.exports = require("github:gdsmith/jquery.easing@1.3.2/jquery.easing");

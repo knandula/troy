@@ -1,0 +1,251 @@
+@import "var.less";
+
+.angular-google-map-container { height: 550px; }
+tr.segment {
+  background-color: #fafafa;
+  display: none;
+}
+
+h4.root {
+  background-color: #aaeeaa;
+  padding: 10px;
+}
+
+#segmentsTree:extend(.row) {
+  ul.segments:extend(.list-unstyled) {
+    display: block;
+    list-style-type: none;
+    padding: 0;
+    margin-left: 30px;
+    li {
+      padding: 0;
+    }
+  }
+  .segment-tree h4 {
+    padding: 4px 5px;
+    margin: 0px;
+    color: white !important;
+    border: 1px solid white;
+    font-size: 15px;
+    a, span {
+      color: white !important;
+    }
+    .open {
+      float: right;
+      padding: 0 10px;
+      border-left: 1px solid white;
+    }
+  }
+  .segment-tree {
+    &:nth-child(6n+1)  h4 {
+      background-color: @chart-color-1;
+    }
+    &:nth-child(6n+2)  h4 {
+      background-color: @chart-color-2;
+    }
+    &:nth-child(6n+3)  h4 {
+      background-color: @chart-color-3;
+    }
+    &:nth-child(6n+4)  h4 {
+      background-color: @chart-color-4;
+    }
+    &:nth-child(6n+5)  h4 {
+      background-color: @chart-color-5;
+    }
+    &:nth-child(6n+6)  h4 {
+      background-color: @chart-color-6;
+      a, span {
+        color: @text-color !important;
+      }
+    }
+  }
+}
+
+.btn-tag {
+  display: inline-block;
+  margin: 2px 1px;
+}
+
+.footer-widget {
+  background-color: transparent;
+  a {
+    color: #5e646d;
+  }
+}
+
+.tags-inline{
+  margin-left: 0;
+  li {
+    padding: 0 2px;
+    line-height: 30px;
+  }
+}
+
+.tag:extend(.label) {
+  font-weight: normal;
+  color: white !important;
+  margin: 3px 0 ;
+  font-size: 12px;
+  padding: 6px;
+
+  a {
+    margin: 0;
+    color: white;
+  }
+  &.active-tag {
+    background-color: @active-tag;
+  }
+
+  &.inactive-tag {
+    background-color: @inactive-tag;
+  }
+  &.primary-tag {
+    background-color: @primary-tag-color;
+  }
+  &.entity-type-tag {
+    background-color: @entity-type-tag-color;
+  }
+  &.sector-participation-tag {
+    background-color: @sector-participation-tag-color;
+  }
+  &.sector-tag {
+    background-color: @sector-tag-color;
+  }
+  &.company-tag {
+    background-color: @company-tag-color;
+  }
+  &.primary-kind-tag {
+    background-color: @primary-kind-tag-color;
+  }
+  &.keyword-tag, &.tag-tag {
+    background-color: @keyword-tag-color;
+  }
+  &.product-tag {
+    background-color: @product-tag-color;
+  }
+  &.brand-tag {
+    background-color: @brand-tag-color;
+  }
+  &.news-tag {
+    background-color: @news-tag-color;
+  }
+
+}
+
+// Chart colors:
+
+i.fa {
+  color: #eeeeee;
+  &.green {
+    color: @chart-color-1;
+  }
+  &.blue {
+    color: @chart-color-2;
+  }
+  &.gray {
+    color: #eeeeee;
+  }
+  &.red {
+    color: red;
+  }
+  &.fa-circle-o {
+    font-weight: 800;
+  }
+}
+
+.social_links {
+  i {
+    font-size: 14pt;
+  }
+  .fa-twitter-square {
+    color: @color-twitter;
+  }
+  .fa-facebook-square {
+    color: @color-facebook;
+  }
+  .fa-linkedin-square {
+    color: @color-linkedin;
+  }
+  .fa-youtube-square {
+    color: @color-youtube;
+  }
+  .fa-google-plus-square {
+    color: @color-google-plus;
+  }
+}
+
+.table.table-condensed.table-detailed {
+  thead > tr > th:not(:first-child) {
+    white-space: pre-line;
+    overflow: initial;
+    text-align: center;
+  }
+  
+  & > tbody {
+    tr.shown + tr.row_detail {
+      background-color: white;
+    }
+
+    tr > td:not(:first-child) {
+      text-align: center;
+    }
+
+    tr > td:first-child {
+      padding-left: 0px;
+    }
+
+    tr.no-children > td:first-child {
+      &:before {
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+
+.tweet {
+  * {
+    color: white !important;
+  }
+  background-color: @color-twitter;
+}
+
+
+.loading-docs {
+  position: absolute;
+  margin-top: -34px;
+  opacity: 0.5;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  md-progress-circular {
+    margin: auto;
+  }
+}
+
+md-card {
+  .panel {
+    height: 100% !important;
+    width: 100% !important;
+    &, &.panel-body {
+      margin: 0 !important;
+    }
+  }
+}
+
+html, body {
+  background-color: @dashboard-background !important;
+}
+
+.news .tags-inline {
+  text-overflow: ellipsis;
+
+  overflow: hidden;
+}
+
+.company {
+  & > h3, .admin-toolbar {
+    display: inline-block;
+    margin-right: 20px;
+  }
+}

@@ -1,89 +1,17 @@
-/**
- * Created by rachanti on 6/23/2015.
- */
 'use strict'
-var app =  angular.module('streatbeatmodule',['ngRoute']);
+/* setup pages import */
+import 'client/pace_loader';
+import appModule from 'client/config';
+import 'jquery';
+import 'jquery-unveil';
+import 'jquery-scrollbar';
+import 'jquery-ui';
+import 'modernizr';
+import 'client/controllers';
+import 'client/directives';
+import 'client/app/pages/pages';
 
-app.config(['$httpProvider','$routeProvider',function($httpProvider,$routeProvider) {
-    $httpProvider.defaults.useXDomain = true;
-    //$httpProvider.defaults.withCredentials = true;
+import 'client/app/pages/directives/pg-search';
+import 'client/app/pages/directives/pg-form-group';
 
-    $routeProvider
-        .when('/', {
-            templateUrl: 'app/views/streatbeat.html',
-            controller: 'streatbeatcntrl'
-        })
-        .otherwise({
-            redirectTo: '/'
-        });
-}
-]);
-
-app.directive('mapbox', [
-    function () {
-        return {
-            restrict: 'EA',
-            replace: true,
-            transclude: true,
-            scope: {
-                callback: "="
-            },
-            template: '<div><pre id="info" style=" display: block;position: relative;margin: 0px auto;width: 50%;padding: 10px;border: none;border-radius: 3px;font-size: 12px;text-align: center;color: #222;background: #fff;"></pre></div>',
-            link: function (scope, element, attributes) {
-
-                var currentlats;
-                var currnetlong;
-
-                L.mapbox.accessToken = 'pk.eyJ1IjoiYmx1ZWdlbmUiLCJhIjoiZjMwNzU2ZmQyMzdlMGQ3YjlkYTRmYmY3ZGY5N2RhMDMifQ.gnt0BCmgUCChF56g7kEo7Q';
-                var map = L.mapbox.map(element[0], 'bluegene.ffdb711a');
-
-                //var map = L.mapbox.map(element[0],null);
-                map.zoomControl = false;
-                var layers = {
-                    SatelliteView : L.mapbox.tileLayer('bluegene.mfl8kdhk'),
-                    StreetView : L.mapbox.tileLayer('bluegene.ffdb711a'),
-                    DarkView : L.mapbox.tileLayer('bluegene.mfl79iea')
-                };
-
-                layers.StreetView.addTo(map);
-                var myLayer = L.mapbox.featureLayer().addTo(map);
-                L.control.layers(layers).addTo(map);
-                map.locate();
-
-                map.on('mousemove', function(e) {
-                var myLayer = L.mapbox.featureLayer().addTo(map);
-
-                });
-
-                map.on('locationfound', function(e) {
-                    currentlats = e.latlng.lat;
-                    currnetlong = e.latlng.lng;
-
-                    map.fitBounds(e.bounds);
-                    myLayer.setGeoJSON({
-                        type: 'Feature',
-                        geometry: {
-                            type: 'Point',
-                            coordinates: [e.latlng.lng, e.latlng.lat]
-                        },
-                        properties: {
-                            'title': 'StreatBeat',
-                            'marker-color': '#ff8888',
-                            'marker-symbol': 'star'
-                        }
-                    });
-                    map.setView([currentlats,currnetlong],16);
-                });
-                // Initialize the geocoder control and add it to the map.
-                var geocoderControl = L.mapbox.geocoderControl( 'mapbox.places',
-                    {
-                     proximity :false,
-                     autocomplete: true
-                    });
-                geocoderControl.addTo(map);
-                map.touchZoom.enable();
-                scope.callback(map);
-            }
-        };
-    }
-]);
+export default appModule;

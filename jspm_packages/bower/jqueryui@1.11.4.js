@@ -1,0 +1,1 @@
+module.exports = require("bower:jqueryui@1.11.4/jquery-ui");

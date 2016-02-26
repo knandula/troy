@@ -1,0 +1,1 @@
+module.exports = require("bower:eventEmitter@4.3.0/EventEmitter");

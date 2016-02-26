@@ -1,0 +1,1 @@
+module.exports = require("bower:rollbar@1.7.0/dist/rollbar.umd");

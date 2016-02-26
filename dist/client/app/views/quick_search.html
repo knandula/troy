@@ -1,0 +1,54 @@
+<!-- START OVERLAY -->
+<search-overlay>
+
+
+    <!-- BEGIN Overlay Search Results, This part is for demo purpose, you can add anything you like !-->
+    <div class="container-fluid">
+        <span id="overlay-suggestions">{{ctrl.search.query}}</span>
+        <br>
+        <div class="search-results m-t-40">
+            <p class="bold">Casper Search Results</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- BEGIN Search Result Item !-->
+                    <div class="">
+                        <!-- BEGIN Search Result Item Thumbnail !-->
+                        <div class="thumbnail-wrapper d48 circular bg-success text-white inline m-t-10">
+                            <i class="fa  fa-lg fa-building"></i>
+                        </div>
+                        <!-- END Search Result Item Thumbnail !-->
+                        <div class="p-l-10 inline p-t-5">
+                            <h5 class="m-b-5">Companies:</h5>
+                            <ul>
+                                <li ng-repeat="company in results.companies">
+                                    <a ui-sref="company.overview({id: company.id})" ng-click="resultChosen()">{{company.display_name}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- END Search Result Item !-->
+                </div>
+                <div class="col-md-6">
+                    <!-- BEGIN Search Result Item !-->
+                    <div class="">
+                        <!-- BEGIN Search Result Item Thumbnail !-->
+                        <div class="thumbnail-wrapper d48 circular bg-info text-white inline m-t-10">
+                            <i class="fa  fa-lg fa-bar-chart"></i>
+                        </div>
+                        <!-- END Search Result Item Thumbnail !-->
+                        <div class="p-l-10 inline p-t-5">
+                            <h5 class="m-b-5">sectors:</h5>
+                            <ul>
+                                <li ng-repeat="sector in results.sectors">
+                                    <a ui-sref="sector.overview({id: sector.id})" ng-click="resultChosen()">{{sector.name}}</a>
+                                </li>
+                        </div>
+                    </div>
+                    <!-- END Search Result Item !-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END Overlay Search Results !-->
+
+</search-overlay>

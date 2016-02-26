@@ -1,0 +1,1 @@
+module.exports = require("npm:corslite@0.0.6/corslite.js");
