@@ -1,1 +1,0 @@
-module.exports = require("bower:angular-google-analytics@1.1.1/dist/angular-google-analytics");

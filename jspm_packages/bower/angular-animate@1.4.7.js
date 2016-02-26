@@ -1,1 +1,0 @@
-module.exports = require("bower:angular-animate@1.4.7/angular-animate");

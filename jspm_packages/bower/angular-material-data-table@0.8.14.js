@@ -1,1 +1,0 @@
-module.exports = require("bower:angular-material-data-table@0.8.14/dist/md-data-table.min");

@@ -1,1 +1,0 @@
-module.exports = require("bower:jquery.actual@1.0.17/jquery.actual");

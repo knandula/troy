@@ -1,1 +1,0 @@
-module.exports = require("npm:angular-storage@0.0.13/index.js");

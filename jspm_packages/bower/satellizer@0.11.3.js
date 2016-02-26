@@ -1,1 +1,0 @@
-module.exports = require("bower:satellizer@0.11.3/satellizer");

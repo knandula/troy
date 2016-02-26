@@ -1,1 +1,0 @@
-module.exports = require("bower:angular-ui-router-title@0.0.3/angular-ui-router-title");

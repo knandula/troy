@@ -1,1 +1,0 @@
-module.exports = require("github:luis-almeida/unveil@1.3.0/jquery.unveil");

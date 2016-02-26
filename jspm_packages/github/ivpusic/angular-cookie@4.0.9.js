@@ -1,1 +1,0 @@
-module.exports = require("github:ivpusic/angular-cookie@4.0.9/angular-cookie");

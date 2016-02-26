@@ -1,1 +1,0 @@
-module.exports = require("bower:vis@4.9.0/dist/vis.min");

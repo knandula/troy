@@ -1,1 +1,0 @@
-module.exports = require("github:rdallasgray/bez@1.0.11/jquery.bez.min");

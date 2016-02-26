@@ -1,2 +1,0 @@
-/* */ 
-var delayedMessage = "It worked!";

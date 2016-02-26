@@ -1,1 +1,0 @@
-module.exports = require("bower:angular-simple-logger@0.1.4/dist/angular-simple-logger");

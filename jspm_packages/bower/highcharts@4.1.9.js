@@ -1,1 +1,0 @@
-module.exports = require("bower:highcharts@4.1.9/highcharts");

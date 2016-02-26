@@ -1,1 +1,0 @@
-module.exports = require("bower:angular-ui-router@0.2.15/release/angular-ui-router");

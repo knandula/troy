@@ -1,1 +1,0 @@
-module.exports = require("npm:desandro-classie@1.0.1/classie.js");
