@@ -111,6 +111,6 @@
     "node": "5.6.0"
   },
   "scripts": {
-    "postinstall": "jspm install && jspm dl-loader"
+    "postinstall": "jspm registry create bower jspm-bower-endpoint && jspm install"
   }
 }
