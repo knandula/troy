@@ -115,6 +115,6 @@
     "node": ">=5.0.0"
   },
   "scripts": {
-    "postinstall": "npm install"
+    "postinstall": "node --version && npm --version"
   }
 }
