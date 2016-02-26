@@ -111,6 +111,6 @@
     "node": "5.6.0"
   },
   "scripts": {
-    "postinstall": "jspm registry create bower jspm-bower-endpoint && jspm install"
+    "postinstall": "jspm config registries.github.timeouts.lookup 240 && jspm registry create bower jspm-bower-endpoint && jspm install && jspm dl-loader"
   }
 }
