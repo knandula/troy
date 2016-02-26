@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "bower": "^1.4.1",
-    "jspm": "^0.16.12"
+    "jspm": "^0.16.12",
+    "jspm-bower-endpoint": "^0.3.2"
   },
   "devDependencies": {
     "babel": "^5.8.23",
