@@ -5,6 +5,9 @@
   "main": "./src/server/app.js",
   "author": "streatbeat",
   "license": "ISC",
+  "engines": {
+    "node": "4.1.1"
+  },
   "dependencies": {
     "bower": "^1.4.1",
     "browser-sync": "^2.7.6",
