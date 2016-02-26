@@ -13,7 +13,9 @@
     "browser-sync": "^2.7.6",
     "corslite": "0.0.7",
     "express": "^4.12.4",
-    "geojson": "^0.2.1"
+    "geojson": "^0.2.1",
+    "jspm": "^0.16.12",
+    "jspm-bower-endporocessor": "^5.2.2"
   },
   "devDependencies": {
     "babel": "^5.8.23",
