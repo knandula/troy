@@ -24,6 +24,7 @@
     "istanbul": "^0.3.20",
     "jasmine-core": "^2.3.4",
     "jspm": "^0.16.12",
+    "jspm-bower-endpoint": "^0.3.2",
     "karma-coverage": "douglasduteil/karma-coverage#next",
     "karma-jasmine": "^0.3.6",
     "karma-jspm": "^2.0.1",
