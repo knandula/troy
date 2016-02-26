@@ -1,4 +1,11 @@
 {
+  "dependencies": {
+    "bower": "^1.4.1",
+    "browser-sync": "^2.7.6",
+    "corslite": "0.0.7",
+    "express": "^4.12.4",
+    "geojson": "^0.2.1"
+  },
   "devDependencies": {
     "babel": "^5.8.23",
     "bootstrap": "^3.3.5",
