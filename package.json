@@ -6,7 +6,8 @@
   "author": "streatbeat",
   "license": "ISC",
   "engines": {
-    "node": "4.1.1"
+    "node": "5.1.0",
+    "npm": "3.3.12"
   },
   "devDependencies": {
     "babel": "^5.8.23",
@@ -115,9 +116,6 @@
     }
   },
   "scripts": {
-    "postinstall": "jspm install && jspm dl-loader ",
-    "test": "gulp recompile && ./node_modules/gulp-helpers/node_modules/karma/bin/karma start  --browsers PhantomJS",
-    "protractor-setup": "./node_modules/.bin/webdriver-manager update --standalone",
-    "protractor-run": "./node_modules/.bin/protractor protractor.conf.js"
+    "postinstall": "jspm install && jspm dl-loader "
   }
 }
