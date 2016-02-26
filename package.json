@@ -115,6 +115,6 @@
     "node": "5.6.0"
   },
   "scripts": {
-    "postinstall": "jspm install"
+    "postinstall": "bower install"
   }
 }
