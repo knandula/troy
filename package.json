@@ -115,9 +115,6 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "postinstall": "jspm install && jspm dl-loader ",
-    "test": "gulp recompile && ./node_modules/gulp-helpers/node_modules/karma/bin/karma start  --browsers PhantomJS",
-    "protractor-setup": "./node_modules/.bin/webdriver-manager update --standalone",
-    "protractor-run": "./node_modules/.bin/protractor protractor.conf.js"
+    "postinstall": "jspm install && jspm dl-loader "
   }
 }
