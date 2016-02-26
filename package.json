@@ -114,8 +114,6 @@
         }
       }
     }
-  },
-  "scripts": {
-    "postinstall": "jspm install && jspm dl-loader "
   }
+
 }
