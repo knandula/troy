@@ -2,7 +2,12 @@
   "dependencies": {
     "bower": "^1.4.1",
     "jspm": "^0.16.12",
-    "jspm-bower-endpoint": "^0.3.2"
+    "jspm-bower-endpoint": "^0.3.2",
+    "gulp": "^3.9.0",
+    "gulp-helpers": "2.0.14",
+    "gulp-less": "^3.0.3",
+    "gulp-plumber": "^1.0.1",
+    "gulp-sourcemaps": "^1.5.2"
   },
   "devDependencies": {
     "babel": "^5.8.23",

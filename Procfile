@@ -1,2 +1,2 @@
-web: node ../../../node_modules/gulp/bin/gulp run
+web: gulp run
 
