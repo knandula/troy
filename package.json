@@ -109,6 +109,6 @@
     "node": "5.6.0"
   },
   "scripts": {
-    "postinstall": "jspm config registries.github.timeouts.lookup 600 && jspm config registries.github.timeouts.build 600 && jspm registry create bower jspm-bower-endpoint && jspm install && jspm dl-loader"
+    "postinstall": "jspm config registries.github.timeouts.lookup 600 && jspm config registries.github.timeouts.build 600 && jspm config registries.github.timeouts.download 600 && jspm registry create bower jspm-bower-endpoint && jspm registry export github && jspm config registries.github.remote https://github.jspm.io && jspm config registries.github.auth $GITHUB_AUTH_TOKEN && jspm config registries.github.handler jspm-github && jspm install && jspm dl-loader"
   }
 }
