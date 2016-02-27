@@ -140,7 +140,7 @@ gulp.task('run', function(callback) {
     if (situation.isProduction()) {
         return runSequence('recompile:prod','serve', callback);
     } else if (situation.isDevelopment()) {
-        return runSequence('recompile', 'lint', 'serve', 'watch', callback);
+        return runSequence('recompile', 'lint','serve', 'watch', callback);
     }
 });
 
