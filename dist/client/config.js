@@ -12,12 +12,30 @@ System.register(['angular', 'ngSanitize', 'angular-material', 'angular-messages'
             appModule.config(["$locationProvider", "$httpProvider", "$urlRouterProvider", "$stateProvider", function ($locationProvider, $httpProvider, $urlRouterProvider, $stateProvider) {
                 $httpProvider.useApplyAsync(true);
                 $stateProvider.state('home', {
-                    url: '/',
-                    templateUrl: 'index.html'
+                    url: "/welcome",
+                    templateUrl: 'client/app/views/welcome.html',
+                    controller: 'AppController'
+                }).state('main', {
+                    url: "/main",
+                    templateUrl: 'client/app/views/main.html',
+                    controller: 'streatbeatcntrl'
                 });
-                return $urlRouterProvider.otherwise(function ($injector) {
-                    var $state = $injector.get('$state');
-                    $state.go('home');
+                $urlRouterProvider.otherwise("/welcome");
+
+                $urlRouterProvider.rule(function ($injector, $location) {
+                    var path = $location.path(),
+                        normalized = path.toLowerCase();
+                    if (path !== normalized) {
+                        $location.replace().path(normalized);
+                    }
+                });
+            }]);
+
+            appModule.run(["$rootScope", "$state", "$location", function ($rootScope, $state, $location) {
+
+                $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState) {
+                    console.log(toState);
+                    console.log(fromState);
                 });
             }]);
 

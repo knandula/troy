@@ -24,13 +24,33 @@ appModule
         $httpProvider.useApplyAsync(true);
         $stateProvider
             .state('home', {
-                url: '/',
-                templateUrl: 'index.html'
+                url: "/welcome",
+                templateUrl: 'client/app/views/welcome.html',
+                controller : 'AppController'
+            })
+            .state('main', {
+                url:"/main",
+                templateUrl: 'client/app/views/main.html',
+                controller : 'streatbeatcntrl'
             });
-        return $urlRouterProvider.otherwise(function($injector){
-            var $state = $injector.get('$state');
-            $state.go('home');
+        $urlRouterProvider.otherwise("/welcome");
+        //      allow case insensitive urls
+        $urlRouterProvider.rule(function ($injector, $location) {
+//          what this function returns will be set as the $location.url
+            var path = $location.path(), normalized = path.toLowerCase();
+            if (path !== normalized) {
+//              instead of returning a new url ,change the $location.path directly so we needn't to worry about building a new url string and so new state change is not triggered
+                $location.replace().path(normalized);
+            }
         });
     });
+
+appModule.run(function ($rootScope, $state, $location) {
+
+    $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState) {
+        console.log(toState);
+        console.log(fromState);
+    });
+});
 
 export default appModule;

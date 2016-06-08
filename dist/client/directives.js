@@ -14,7 +14,7 @@ System.register(['client/config'], function (_export) {
                     replace: true,
                     transclude: true,
                     scope: {
-                        callback: "="
+                        callback: '='
                     },
                     template: '<div><pre id="info" style=" display: block;position: relative;margin: 0px auto;width: 50%;padding: 10px;border: none;border-radius: 3px;font-size: 12px;text-align: center;color: #222;background: #fff;"></pre></div>',
                     link: function link(scope, element, attributes) {
@@ -66,7 +66,8 @@ System.register(['client/config'], function (_export) {
                             autocomplete: true
                         });
                         geocoderControl.addTo(map);
-                        map.touchZoom.enable();
+
+                        scope.callback(map);
                     }
                 };
             }]);
